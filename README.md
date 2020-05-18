@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/itfeature/Week4Rpackage.svg?branch=master)](https://travis-ci.org/itfeature/Week4Rpackage)
+
 # Build R Project Week 4 - Coursera
 By Muhammad imdad Ullah
 
