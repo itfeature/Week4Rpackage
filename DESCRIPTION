@@ -1,0 +1,19 @@
+Package: week4
+Type: Package
+Depends: R (>= 2.10)
+Imports: readr, dplyr, magrittr, tidyr, maps, graphics
+Title: Build R Package final test from Coursera
+Version: 0.1.0
+Author: Imdad Ullah <mimdadasad@gmail.com.com>
+Maintainer: Imdad Ullah <mimdadasad@gmail.com.com>
+Description: This package read and summarize FARS data and summarize them
+    FARS is US National Highway Traffic Safety Administration's Fatality Analysis Reporting System
+    Summary reports are by year(s) and incident plots by state and year.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
+RoxygenNote: 7.1.0

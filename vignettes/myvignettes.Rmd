@@ -1,0 +1,43 @@
+---
+title: "Week 4 package for reading and summarizing FARS data"
+author: "Muhammad Imdad Ullah"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{week 4 Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+  ```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(knitr)
+```
+
+Week 4 package contains functions that read US National Highway Traffic Safety Administration's Fatality Analysis Reporting System (FARS) data and summarize them. The source data is from the [https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars).
+
+
+## Package Info
+
+The package contains 5 functions:
+
+1. **fars_read** that takes string filename as input and returns full data from the file in data frame.
+2. **make_filename** that takes integer year as input and returns FARS source data filename for the given year.
+3. **fars_read_years** that takes a vector of integer years as input and returns a list of data frames containing fatality incidents for every months for each given year.
+4. **fars_summarize_years** that takes a vector of integer years as input and returns a summarized data frame containing the number of incidents for every month & year. Month and Years are represented in the columns.
+5. **fars_map_state** that takes an integer state number and integer year as inputs and returns a state map with plots, where each dot represents a fatality incident.
+
+## Sample Summarized Data
+
+The package comes with a sample summarized yearly data for year 2013 to 2015 called farsyrsum. It is the output of `fars_summarize_years(2013:2015)`.
+
+```{r farsyrsum}
+filename <- file.path("..","data","farsyrsum.rda")
+load(filename)
+knitr::kable(farsyrsum)
+```
